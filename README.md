@@ -1,12 +1,9 @@
-# portfolio-website-developer
+# My developer portfolio website
+[hi.subhash.org](https://hi.subhash.org)
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.16.0.
 
-## Build & development
+## Built with
 
-Run `grunt` for building and `grunt serve` for preview.
-
-## Testing
-
-Running `grunt test` will run the unit tests with karma.
+- AngularJS
+- Bootstrap
+- Yeoman
