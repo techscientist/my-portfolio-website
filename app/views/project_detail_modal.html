@@ -1,0 +1,16 @@
+<style>
+.popeye-modal-container.modal-container {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+</style>
+<div class="container" style="padding: 5px;">
+	<h2 class="display2">{{proj.name}}</h2>
+	<span ng-class="proj.badge_css" ng-if="proj.tech" ng-repeat="t in proj.tech" class="badge badge-secondary animated zoomIn" style="margin:2.5px; -webkit-animation-delay: {{ .1 + 0.15 * $index }}s;">{{t}}</span>
+	<ul style="margin-top: 25px">
+		<li ng-repeat="d in proj.short_desc" class="animated fadeIn" style="margin-top: 20px;-webkit-animation-delay: {{ .5 + 0.15 * $index }}s">{{d}}</li>
+	</ul>
+	<div class="row" style="margin-top: 15px">
+		<a ng-repeat="link in proj.links" href="{{link[1]}}" class="animated fadeIn" ng-class="link[2]" style="margin-left:10px; -webkit-animation-delay: {{ 1 + 0.15 * $index }}s">{{link[0]}}</a>
+		<a ng-if="proj.pics_link" href="{{proj.pics_link}}" class="btn btn-primary animated fadeIn" style="margin-left: 10px; -webkit-animation-delay: 1.5s">See pics</a>
+	</div>
+</div>

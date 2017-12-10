@@ -1,0 +1,69 @@
+<div ng-controller="WorkProjectsCtrl as ctrl" class="container-fluid" style="padding-top: 150px; padding-bottom: 150px;">
+	<div class="row" style=" padding-left: 200px; padding-right: 200px;">
+		<!-- <h1 class="display-4 animated fadeInUp">Building software is like a box of chocolates: <span style="color:grey;">you never know what you're gonna get.</span></h1> -->
+		<!-- <h1 class="display-4 animated fadeInUp">{ 'num_projects' : <span style="color:grey;">12</span>, 'lines_of_code' : <span style="color:slategray;"><i>10K</i></span> }</h1> -->
+		<h1 class="display-4 animated fadeInUp">Do you even <b><i>code</i></b>, bro?</h1>
+		<br>
+		<h4 class="animated fadeInUp" style="color: darkgrey; margin-top: 20px;">/* Well, <i>I</i> do, so here's a sneak peek into some of the things that I've built so far. */</h4>
+	</div>
+
+	<!--
+	<div class="row" style="margin-top: 50px; font-family: Quicksand; padding-left: 200px; padding-right: 200px;">
+		<div id="workSelector" class="btn-group" data-toggle="buttons">
+			<label class="btn btn-light active animated fadeIn" style='-webkit-animation-delay:1.0s'>
+				<input type="checkbox" checked autocomplete="off">Artificial Intelligence
+			</label>
+			<label class="btn btn-light animated fadeIn active" style='-webkit-animation-delay:1.2s'>
+				<input type="checkbox" autocomplete="off">Python
+			</label>
+			<label class="btn btn-light animated fadeIn active" style='-webkit-animation-delay:1.4s'>
+				<input type="checkbox" autocomplete="off">Java
+			</label>
+			<label class="btn btn-light animated fadeIn active" style='-webkit-animation-delay:1.6s'>
+				<input type="checkbox" autocomplete="off">Google Cloud
+			</label>
+			<label class="btn btn-light animated fadeIn active" style='-webkit-animation-delay:1.8s'>
+				<input type="checkbox" autocomplete="off">JavaScript
+			</label>
+			<label class="btn btn-light animated fadeIn active" style='-webkit-animation-delay:2.0s'>
+				<input type="checkbox" autocomplete="off">Redis
+			</label>
+			<label class="btn btn-light animated fadeIn active" style='-webkit-animation-delay:2.2s'>
+				<input type="checkbox" autocomplete="off">PHP
+			</label>
+			<label class="btn btn-light animated fadeIn active" style='-webkit-animation-delay:2.4s'>
+				<input type="checkbox" autocomplete="off">Realtime
+			</label>
+			<label class="btn btn-light animated fadeIn active" style='-webkit-animation-delay:2.6s'>
+				<input type="checkbox" autocomplete="off">Hackathons
+			</label>
+			<label class="btn btn-light animated fadeIn active" style='-webkit-animation-delay:2.8s'>
+				<input type="checkbox" autocomplete="off">Open Source
+			</label>
+		</div>
+		<small id="workSelectorHelpBlock" class="form-text text-muted animated fadeIn" style="-webkit-animation-delay: 3.0s">
+		You can filter through my work using the buttons above. Try it!
+		</small>
+	</div>
+-->
+
+	<div class="row" style="margin-top: 125px; padding-left: 75px; padding-right: 75px;">
+		<div class="card-columns">
+			<div ng-repeat="proj in ctrl.projects" class="card animated zoomIn" ng-class="proj.css_class" style="width: 20rem; padding:5px; -webkit-animation-delay: {{ .8 + 0.15 * $index }}s;" >
+				<img ng-if="proj.img" class="card-img-top" src="{{proj.img}}" alt="{{proj.name}}" style="padding:5px;">
+				<div class="card-body">
+					<h4 class="card-title">{{proj.name}}</h4>
+					<span ng-class="proj.badge_css" ng-if="proj.tech" ng-repeat="t in proj.tech" class="badge badge-secondary" style="margin:2.5px;">{{t}}</span>
+					<!-- <ul style="margin-top: 25px">
+						<li ng-repeat="d in proj.short_desc" class="animated fadeIn" style="margin-top: 20px;">{{d}}</li>
+					</ul> -->
+					<p class="card-text animated fadeIn" style="margin-top: 20px;">{{proj.short_desc[0]}}</p>
+					<div class="row" style="padding-left: 10px; padding-right: 10px; margin-top: 30px;">
+						<a ng-if="proj.has_view" href="{{proj.link}}" class="btn btn-primary mr-auto" ng-class="proj.view_proj_btn_css">{{proj.view_text || "View project"}}</a>
+						<button ng-if="proj.has_learn" ng-click="ctrl.openProjectDetail($index)" class="btn btn-light mr-auto" ng-class="proj.learn_btn_css">Learn more</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

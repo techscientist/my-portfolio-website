@@ -1,0 +1,27 @@
+<script>
+var options = {
+strings: ["a developer", "an entrepreneur", "a student", "a meme lover", 
+"a tech geek", "a team player", "a pizza junkie",  "a problem solver", "an Iron Man wannabe", "a tech guy"],
+typeSpeed: 80,
+startDelay:200,
+backSpeed:100
+}
+var typed = new Typed("#identity", options);
+</script>
+
+
+<div class="container" style="margin-top: 200px;">
+	<div class="row">
+		<h1 class="display-1 animated fadeInUp">Howdy!</h1>
+	</div>
+	<div class="row animated fadeInUp" style="margin-top: 15px; -webkit-animation-delay:0.8s">
+		<h3 class="" style="color: grey;">// My name is Subhash, and I'm <b>
+		<span id='identity'></span></b>.
+		</h3>
+	</div>
+	<div class="row" style="margin-top: 50px;">
+		<a class="btn btn-primary btn-lg animated fadeIn" href="#!/work" role="button" style="-webkit-animation-delay: 1.4s; font-family: Quicksand;">See my work</a>
+		<a class="btn btn-info btn-lg animated fadeIn" href="#!/aboutme" role='button' style="-webkit-animation-delay:1.6s; font-family: Quicksand; margin-left: 10px;">About me</a>
+		<!-- <a class="btn btn-secondary btn-lg animated fadeIn" href="#!/contact" role='button' style="-webkit-animation-delay:1.8s; font-family: Quicksand; margin-left: 10px;">Get in touch</a> -->
+	</div>
+</div>
