@@ -9,9 +9,7 @@
  */
 angular.module('app')
   .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  	this.getClass = function (path) {
+  		return ($location.path().substr(0, path.length) === path) ? 'active' : '';
+  	}
   });
